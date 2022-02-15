@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
-	require('dotenv').config();
+	import dotenv from 'dotenv'
+	dotenv.config()
 }
-
 import express from 'express';
 import { db } from './confFirebase.js';
 import { collection, doc, getDocs, getDoc, addDoc, deleteDoc, updateDoc   } from "firebase/firestore";
@@ -50,10 +50,8 @@ app.post('/agregar', async (req, res) => {
 	res.redirect('/')
 });
 
-
 app.get('/contact/:id', async (req, res) => {
 	let id = req.params.id;
-	console.log(req.body);
 	const docRef = doc(db, "contacts_collection", id);
 	const contact = await getDoc(docRef);
 	if (contact.exists()) {
@@ -70,24 +68,17 @@ app.get('/contact/:id', async (req, res) => {
 	// });
 });
 
-app.put('/contact/updt/:id', async (req, res) => {
-	console.log(req.body);
-	res.redirect('/');
-});
-
 app.get('/contact/update/:id', async (req, res) => {
-	// const updateData = new UpdateData(req.body)
 	let id = req.params.id;
-	// console.log(updateData)
+	console.log(req.body.name);
 	const docRef = doc(db, "contacts_collection", id);
 	// console.log(id)
-	// console.log(req.body.name);
 	await updateDoc(docRef, {
-		name: "otro Raul"
+		name: "El otro Raul"
 	});
 	// console.log(docRef)
 
-	res.redirect('/');
+	res.redirect('/')
 });
 
 app.get('/borrar/:id', async (req, res) => {
@@ -96,6 +87,8 @@ app.get('/borrar/:id', async (req, res) => {
 	
 	res.redirect('/');
 });
+
+
 
 // Init
 app.listen(app.get('port'), () => {
