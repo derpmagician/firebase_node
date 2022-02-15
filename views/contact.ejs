@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact</title>
+	<link rel="stylesheet" href="/css/index.css" type="text/css">
+</head>
+<body>
+	<p>
+		<%= contact.data().name %>
+		<%= contact.data().age %>
+		<%= contact.data().address %>
+		<%= contact.data().phone %>
+	</p>
+	<form id="<%= contact.id %>" action="update" method="put">
+		<input type="text" name="name" id="name" placeholder="<%= contact.data().name %>" />
+		<input type="text" name="age" id="age" placeholder="<%= contact.data().age %>" />
+		<input type="text" name="address" id="address" placeholder="<%= contact.data().address %>" />
+		<input type="text" name="phone" id="phone" placeholder="<%= contact.data().phone %>" />
+		<p><a href="update/<%= contact.id  %>">update</a></p>
+		<p><a href="/contact/updt/<%= contact.id  %>">put</a></p>
+	</form>
+	
+	<button class="example">aqui</button>
+
+	<script src="/js/script.js"></script>
+</body>
+</html>

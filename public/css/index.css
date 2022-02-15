@@ -1,0 +1,121 @@
+:root {
+  --color-prim: rgb(215, 57, 83);
+  --color-prim-drk: rgb(185, 22, 85);
+  --color-prim-lite: rgb(240, 84, 84);
+  --color-snowish: rgb(238, 230, 243);
+  --color-snowish-drk: rgb(215, 201, 223);
+  --color-yellowish: rgb(238, 199, 27);
+  --color-purplish: rgb(70, 4, 65);
+  --bg-color: var(--color-prim);
+  --bg-bx: var(--color-prim-drk);
+  --frm-txt-activ: var(--color-snowish-drk);
+  --frm-txt: var(--color-snowish);
+  --frm-txt-hvr: var(--color-prim-lite);
+  --show: var(--color-yellowish);
+  --show-drk: var(--color-purplish);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--bg-color);
+  color: var(--show);
+  font-size: 20px;
+}
+
+h1 {
+  padding: 1.5rem;
+  color: var(--show);
+  background: var(--color-prim-drk);
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+form {
+  background: var(--color-prim-drk);
+  margin: 1rem;
+  padding: 0 0.5rem;
+  color: var(--frm-txt);
+  border: 1px solid var(--frm-txt); ;
+  width: 400px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0.25rem 0.25rem;
+}
+
+
+p {
+  margin: 0.5rem 0;
+}
+
+input[type=text] {
+  color: var(--show);
+  background: var(--bg-color);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  width: calc(100% - 2rem);
+  border: none;
+  border-bottom: 1px solid rgb(233, 232, 192);
+}
+
+input[type=text]:hover {
+  background: var(--frm-txt-hvr);
+}
+
+input[type=text]:focus {
+  border: none;
+  border-bottom: 1px solid var(--frm-txt-activ);
+  background: var(--frm-txt-activ);
+  color: var(--show-drk);
+}
+
+button {
+  background: var(--bg-color);
+  border-radius: 5px;
+  border: 2px solid var(--frm-txt);
+  margin: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
+  width: calc(100% - 2rem);
+  font-size: 1.25rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--frm-txt-hvr);
+}
+
+section {
+  background:var(--color-prim-drk);
+  padding: 1rem;
+  width: 500px;
+  font-size: 1rem;
+
+}
+
+.data {
+  width: 100%;
+  color: var(--show-drk);
+  display: flex;
+}
+
+a {
+  font-size: 1.5rem;
+  color: var(--show);
+  margin: 1rem 0.25rem;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--show);
+}
+
+.del {
+  border: 1px solid var(--frm-txt);
+  border-radius: 3px;
+}
