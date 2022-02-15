@@ -1,6 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-	import dotenv from 'dotenv'
-	dotenv.config()
+	require('dotenv').config();
 }
 import express from 'express';
 import { db } from './confFirebase.js';
