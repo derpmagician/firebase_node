@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+	require('dotenv').config();
+}
+
 import express from 'express';
 import { db } from './confFirebase.js';
 import { collection, doc, getDocs, getDoc, addDoc, deleteDoc, updateDoc   } from "firebase/firestore";
